@@ -1,0 +1,8 @@
+flask
+PyPDF2
+python-dotenv
+reportlab
+groq
+google-generativeai
+SpeechRecognition
+pyaudio
