@@ -1,11 +1,17 @@
 from reportlab.pdfgen import canvas
 import os
 
+
 def generate_interview_report(score, feedback):
 
-    os.makedirs("reports", exist_ok=True)
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 
-    pdf = canvas.Canvas("reports/interview_summary.pdf")
+    os.makedirs(REPORTS_DIR, exist_ok=True)
+
+    pdf = canvas.Canvas(
+        os.path.join(REPORTS_DIR, "interview_summary.pdf")
+    )
 
     # Title
     pdf.setFont("Helvetica-Bold", 16)
