@@ -135,28 +135,18 @@ def upload():
         improvements
     )
     print("generate_report completed")
-    print(
-    "PDF Exists:",
-    os.path.exists(
-        os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            "reports",
-            "interview_report.pdf"
-        )
-    )
-)
+#     print(
+#     "PDF Exists:",
+#     os.path.exists(
+#         os.path.join(
+#             os.path.dirname(os.path.abspath(__file__)),
+#             "reports",
+#             "interview_report.pdf"
+#         )
+#     )
+# )
     
-print("Files in reports folder:")
 
-reports_dir = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "reports"
-)
-
-if os.path.exists(reports_dir):
-    print(os.listdir(reports_dir))
-else:
-    print("reports folder not found")
     return f"""
     <html>
 
