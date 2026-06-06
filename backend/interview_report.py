@@ -1,8 +1,11 @@
 from reportlab.pdfgen import canvas
+import os
 
 def generate_interview_report(score, feedback):
 
-    pdf = canvas.Canvas("../reports/interview_summary.pdf")
+    os.makedirs("reports", exist_ok=True)
+
+    pdf = canvas.Canvas("reports/interview_summary.pdf")
 
     # Title
     pdf.setFont("Helvetica-Bold", 16)
@@ -14,7 +17,7 @@ def generate_interview_report(score, feedback):
 
     # Strengths
     pdf.drawString(120, 720, "Strengths:")
-    pdf.drawString(120, 680, "- Good Technical Knowledge")
+    pdf.drawString(120, 700, "- Good Technical Knowledge")
     pdf.drawString(120, 680, "- Answered Multiple Questions")
 
     # Improvements
@@ -32,12 +35,10 @@ def generate_interview_report(score, feedback):
 
         line = line.replace("■", "")
 
-        # Skip empty lines
         if not line.strip():
             y -= 10
             continue
 
-        # Long line handling
         while len(line) > 120:
             pdf.drawString(50, y, line[:120])
             line = line[120:]
