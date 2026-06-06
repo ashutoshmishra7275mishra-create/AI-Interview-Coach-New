@@ -1,5 +1,7 @@
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
+import os
+
 
 def generate_report(
         score,
@@ -8,8 +10,11 @@ def generate_report(
         strengths,
         improvements):
 
+    # reports folder automatically create karega
+    os.makedirs("reports", exist_ok=True)
+
     pdf = SimpleDocTemplate(
-        "../reports/interview_report.pdf"
+        "reports/interview_report.pdf"
     )
 
     styles = getSampleStyleSheet()
