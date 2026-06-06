@@ -235,7 +235,7 @@ def upload():
 
         <br>
 
-        <a href="/download-resume">
+        <a href="/download_resume">
             📥 Download PDF Report
         </a>
 
@@ -412,7 +412,7 @@ style="display:none;">{all_feedback}</textarea>
     <h3>🤖 Complete AI Evaluation:</h3>
     <pre>{all_feedback}</pre>
     <br>
-    <a href="/download-interview">📥 Download Interview Report</a>
+    <a href="/download_interview">📥 Download Interview Report</a>
     <br><br>
     <a href="/mock">Start Again</a>
     </body>
