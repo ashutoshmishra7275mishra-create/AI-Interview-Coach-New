@@ -5,4 +5,3 @@ reportlab
 groq
 google-generativeai
 SpeechRecognition
-pyaudio
