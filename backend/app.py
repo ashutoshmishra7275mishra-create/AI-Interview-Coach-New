@@ -492,10 +492,9 @@ def download_interview():
 def download_report():
 
     return send_file(
-        "../reports/interview_report.pdf",
+        "reports/interview_report.pdf",
         as_attachment=True
     )
-
 
 if __name__ == "__main__":
     app.run(
