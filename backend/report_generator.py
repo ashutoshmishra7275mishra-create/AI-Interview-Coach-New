@@ -10,11 +10,13 @@ def generate_report(
         strengths,
         improvements):
 
-    # reports folder automatically create karega
-    os.makedirs("reports", exist_ok=True)
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+
+    os.makedirs(REPORTS_DIR, exist_ok=True)
 
     pdf = SimpleDocTemplate(
-        "reports/interview_report.pdf"
+        os.path.join(REPORTS_DIR, "interview_report.pdf")
     )
 
     styles = getSampleStyleSheet()
@@ -106,3 +108,10 @@ def generate_report(
         )
 
     pdf.build(content)
+    
+    print("PDF CREATED SUCCESSFULLY")
+    print(
+        os.path.join(
+            REPORTS_DIR,"interview_report.pdf"
+        )
+    )
