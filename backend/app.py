@@ -513,8 +513,8 @@ REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 
 @app.route("/download_resume")
 def download_resume():
-    print("Looking for:",os.path.join(REPORTS_DIR,"interview_report.pdf"))
-    print("Exists:", os.path.exists(os.path.join(REPORTS_DIR,"interview_report.pdf")))
+    # print("Looking for:",os.path.join(REPORTS_DIR,"interview_report.pdf"))
+    # print("Exists:", os.path.exists(os.path.join(REPORTS_DIR,"interview_report.pdf")))
 
     return send_file(
         os.path.join(REPORTS_DIR, "interview_report.pdf"),
