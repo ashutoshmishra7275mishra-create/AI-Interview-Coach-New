@@ -495,19 +495,24 @@ def ai_answer():
 #         "reports/interview_summary.pdf",
 #         as_attachment=True
 #     )
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+
+
 @app.route("/download_resume")
 def download_resume():
 
     return send_file(
-        "reports/interview_report.pdf",
+        os.path.join(REPORTS_DIR, "interview_report.pdf"),
         as_attachment=True
     )
+
 
 @app.route("/download_interview")
 def download_interview():
 
     return send_file(
-        "reports/interview_summary.pdf",
+        os.path.join(REPORTS_DIR, "interview_summary.pdf"),
         as_attachment=True
     )
     
