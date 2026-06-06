@@ -507,12 +507,14 @@ def ai_answer():
 #         "reports/interview_summary.pdf",
 #         as_attachment=True
 #     )
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 
 
 @app.route("/download_resume")
 def download_resume():
+    print("Looking for:",os.path.join(REPORTS_DIR,"interview_report.pdf"))
+    print("Exists:", os.path.exists(os.path.join(REPORTS_DIR,"interview_report.pdf")))
 
     return send_file(
         os.path.join(REPORTS_DIR, "interview_report.pdf"),
