@@ -235,7 +235,7 @@ def upload():
 
         <br>
 
-        <a href="/download">
+        <a href="/download-resume">
             📥 Download PDF Report
         </a>
 
@@ -480,22 +480,37 @@ def ai_answer():
     """
 
 
-@app.route("/download-interview")
-def download_interview():
+# @app.route("/download-interview")
+# def download_interview():
+
+#     return send_file(
+#         "../reports/interview_summary.pdf",
+#         as_attachment=True
+#     )
+
+# @app.route("/download")
+# def download_report():
+
+#     return send_file(
+#         "reports/interview_summary.pdf",
+#         as_attachment=True
+#     )
+@app.route("/download_resume")
+def download_resume():
 
     return send_file(
-        "../reports/interview_summary.pdf",
+        "reports/interview_report.pdf",
         as_attachment=True
     )
 
-@app.route("/download")
-def download_report():
+@app.route("/download_interview")
+def download_interview():
 
     return send_file(
         "reports/interview_summary.pdf",
         as_attachment=True
     )
-
+    
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
